@@ -1,0 +1,35 @@
+const path = require("path");
+
+const rootPath = path.resolve(".");
+
+module.exports = (config) => ({
+  general: {
+    // Only the source files with this suffix will be compiled
+    sourceKey: "source",
+    // The compiled bundle filename suffix
+    bundleKey: "bundle",
+    // The path to the directory with your source files
+    sourcesPath: path.join(rootPath, "src"),
+    // Path to the dir with the code shared among Scss and JS files
+    common: "common",
+    // Paths to ignore when the build looks for files to compile
+    ignore: ["!(**/target/**)", "!(**/jcr_root/**)", "!(**/common/**)"],
+    // Destination of the compiled files
+    destinationPath: path.join(rootPath, "dist"),
+    // Name of the configuration file
+    extendConfigurations: ".febuild",
+    // Modules to run with webpack, each being a config file (e.g. eslint.config.js)
+    modules: ["eslint", "babel"],
+    // The tasks to run when executing `npm run build`
+    defaultTasks: ["styles", "webpack"],
+  },
+  babel: {
+    use: {
+      loader: "babel-loader",
+      options: {
+        ...config.babel.use.options,
+        presets: [...config.babel.use.options.presets, ["@babel/preset-react"]],
+      },
+    },
+  },
+});

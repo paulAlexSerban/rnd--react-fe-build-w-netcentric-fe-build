@@ -1,0 +1,29 @@
+{
+  "name": "rnd--small-prj-react-fe-build-w-netcentric-fe-build",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "NODE_ENV=production nc-fe-build",
+    "watch:all": "nc-fe-build --watch",
+    "watch:js": "nc-fe-build --task=webpack --watch",
+    "watch:css": "nc-fe-build --task=styles --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulAlexSerban/rnd--small-prj-react-fe-build-w-netcentric-fe-build.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paulAlexSerban/rnd--small-prj-react-fe-build-w-netcentric-fe-build/issues"
+  },
+  "homepage": "https://github.com/paulAlexSerban/rnd--small-prj-react-fe-build-w-netcentric-fe-build#readme",
+  "devDependencies": {
+    "@netcentric/fe-build": "^2.1.0"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
